@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/views/register.jsp").forward(request,response);
+		request.getRequestDispatcher("register.jsp").forward(request,response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 			else{
 				//if unable to log in, add error message and redirect back to register
 				request.setAttribute("error","Unable to add user");
-				request.getRequestDispatcher("register").forward(request,response);
+				request.getRequestDispatcher("/register.jsp").forward(request,response);
 			}
 		}
 		catch(Exception e){

@@ -33,7 +33,7 @@ public class CreateAdvisorServlet extends HttpServlet{
 		if (user == null){
 				user = new LoginUser();
 				session.setAttribute("user", user);
-				response.sendRedirect("/WEB-INF/jsp/views/login.jsp");		
+				response.sendRedirect("/login.jsp");		
 		}
 		else{
 			try{
@@ -45,7 +45,7 @@ public class CreateAdvisorServlet extends HttpServlet{
 		}
 		
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/create_advisor.jsp").forward(request, response);
+		request.getRequestDispatcher("/create_advisor.jsp").forward(request, response);
 	}
 
 	/**

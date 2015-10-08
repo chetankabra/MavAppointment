@@ -77,7 +77,7 @@ public class ViewAppointmentServlet extends HttpServlet{
 					session.removeAttribute("appointments");
 					session.setAttribute("appointments", appointments);
 					response.setHeader("Refresh","2; URL=appointments");
-					request.getRequestDispatcher("/WEB-INF/jsp/views/success.jsp").forward(request,response);
+					request.getRequestDispatcher("/success.jsp").forward(request,response);
 				}
 			}
 		catch(Exception e){
@@ -88,6 +88,6 @@ public class ViewAppointmentServlet extends HttpServlet{
 			header = "templates/header.jsp";
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/view_appointments.jsp").forward(request,response);
+		request.getRequestDispatcher("/view_appointments.jsp").forward(request,response);
 	}
 }
