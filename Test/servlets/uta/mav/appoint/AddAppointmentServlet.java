@@ -52,7 +52,11 @@ public class AddAppointmentServlet extends HttpServlet {
 					System.out.printf(e.toString());
 				}
 			request.setAttribute("includeHeader", header);
+<<<<<<< HEAD
 			request.getRequestDispatcher("customize.jsp").forward(request,response);
+=======
+			request.getRequestDispatcher("/customize.jsp").forward(request,response);
+>>>>>>> chetankabra/master
 		}
 
 }

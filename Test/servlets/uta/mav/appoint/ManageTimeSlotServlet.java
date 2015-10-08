@@ -40,7 +40,7 @@ public class ManageTimeSlotServlet extends HttpServlet {
 				header = "templates/header.jsp";
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	
 	}
 }
