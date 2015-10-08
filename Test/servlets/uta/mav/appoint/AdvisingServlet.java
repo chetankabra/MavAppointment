@@ -87,6 +87,6 @@ public class AdvisingServlet extends HttpServlet{
 			System.out.printf(e.toString());
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/advising.jsp").forward(request, response);
+		request.getRequestDispatcher("/advising.jsp").forward(request, response);
 	}
 }

@@ -29,7 +29,7 @@ public class AddAppointmentServlet extends HttpServlet {
 			if (user == null){
 				user = new LoginUser();
 				session.setAttribute("user", user);
-				response.sendRedirect("/WEB-INF/jsp/views/login.jsp");
+				response.sendRedirect("/login.jsp");
 			}
 				try{
 						header = "templates/" + user.getHeader() + ".jsp";

@@ -40,7 +40,7 @@ public class ScheduleAppointmentServlet extends HttpServlet{
 			System.out.printf(e.toString());
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/schedule_appointment.jsp").forward(request, response);
+		request.getRequestDispatcher("/schedule_appointment.jsp").forward(request, response);
 	}
 
 
@@ -65,11 +65,11 @@ public class ScheduleAppointmentServlet extends HttpServlet{
 			Boolean result = dbm.createAppointment(a,email);
 			if (result == true){
 				response.setHeader("Refresh","2; URL=advising");
-				request.getRequestDispatcher("/WEB-INF/jsp/views/success.jsp").forward(request,response);
+				request.getRequestDispatcher("/success.jsp").forward(request,response);
 			}
 			else{
 				response.setHeader("Refresh","2; URL=advising");
-				request.getRequestDispatcher("/WEB-INF/jsp/views/failure.jsp").forward(request,response);
+				request.getRequestDispatcher("/failure.jsp").forward(request,response);
 			}		
 		}
 		catch(Exception e){

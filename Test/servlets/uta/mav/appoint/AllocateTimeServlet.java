@@ -43,7 +43,7 @@ public class AllocateTimeServlet extends HttpServlet {
 			else{
 				header = "templates/header.jsp";
 				request.setAttribute("includeHeader", header);
-				request.getRequestDispatcher("/WEB-INF/jsp/views/login.jsp").forward(request, response);
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
 		}
 		catch(Exception e){
@@ -51,7 +51,7 @@ public class AllocateTimeServlet extends HttpServlet {
 			System.out.println(e);
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/allocate_time.jsp").forward(request, response);
+		request.getRequestDispatcher("/allocate_time.jsp").forward(request, response);
 
 	}
 	

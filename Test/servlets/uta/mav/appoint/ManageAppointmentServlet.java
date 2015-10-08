@@ -58,7 +58,7 @@ public class ManageAppointmentServlet extends HttpServlet{
 			header = "templates/header.jsp";
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/advising.jsp").forward(request, response);
+		request.getRequestDispatcher("/advising.jsp").forward(request, response);
 	}
 
 
@@ -76,11 +76,11 @@ public class ManageAppointmentServlet extends HttpServlet{
 					Boolean result = dbm.updateAppointment(a);
 					if (result == true){
 						response.setHeader("Refresh","2; URL=appointments");
-						request.getRequestDispatcher("/WEB-INF/jsp/views/success.jsp").forward(request,response);
+						request.getRequestDispatcher("/success.jsp").forward(request,response);
 					}
 					else{
 						response.setHeader("Refresh","2; URL=appointments");
-						request.getRequestDispatcher("/WEB-INF/jsp/views/failure.jsp").forward(request,response);
+						request.getRequestDispatcher("/failure.jsp").forward(request,response);
 					}
 				}
 			catch(Exception e){
@@ -91,6 +91,6 @@ public class ManageAppointmentServlet extends HttpServlet{
 			header = "templates/header.jsp";
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/WEB-INF/jsp/views/advising.jsp").forward(request, response);
+		request.getRequestDispatcher("/advising.jsp").forward(request, response);
 	}
 }
