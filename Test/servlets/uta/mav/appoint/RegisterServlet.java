@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 			else{
 				//if unable to log in, add error message and redirect back to register
 				request.setAttribute("error","Unable to add user");
-				request.getRequestDispatcher("/register.jsp").forward(request,response);
+				request.getRequestDispatcher("register.jsp").forward(request,response);
 			}
 		}
 		catch(Exception e){

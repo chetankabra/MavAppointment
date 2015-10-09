@@ -54,7 +54,7 @@ public class AdvisingServlet extends HttpServlet{
 			
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/advising.jsp").forward(request, response);
+		request.getRequestDispatcher("advising.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -87,6 +87,6 @@ public class AdvisingServlet extends HttpServlet{
 			System.out.printf(e.toString());
 		}
 		request.setAttribute("includeHeader", header);
-		request.getRequestDispatcher("/advising.jsp").forward(request, response);
+		request.getRequestDispatcher("advising.jsp").forward(request, response);
 	}
 }
