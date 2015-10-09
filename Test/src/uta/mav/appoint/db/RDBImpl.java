@@ -39,7 +39,7 @@ public class RDBImpl implements DBImplInterface{
 		try
 	    {
 	    Class.forName("com.mysql.jdbc.Driver").newInstance();
-	    String jdbcUrl = "jdbc:mysql://localhost:3306/MavAppointDB1";
+	    String jdbcUrl = "jdbc:mysql://localhost:3306/meena_db";
 	    String userid = "root";
 	    String password = "root";
 	    Connection conn = DriverManager.getConnection(jdbcUrl,userid,password);
@@ -83,12 +83,21 @@ public class RDBImpl implements DBImplInterface{
 		return result;
 	}
 	
-	public int addUser(GetSet set){
-		/*int check = 0;
-		Connection conn = DatabaseManager.ConnectDB();
+	public int addUser(GetSet set)
+	{
+		int check = 0;
+		PreparedStatement statement;
+         try{
+		Connection conn = this.connectDB();
 		String command = "INSERT INTO USER (email,password,role) VALUES(email=?,password=?,role=?)";
+		statement = conn.prepareStatement(command);
 		return check;
-		*/
+}
+        catch(Exception e)
+          {
+        	System.out.print(e);
+            }
+		
 		return 0;
 	}
 	
