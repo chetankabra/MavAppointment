@@ -23,6 +23,7 @@ public interface DBImplInterface {
 	public Boolean createAppointment(Appointment a, String email) throws SQLException;
 	public ArrayList<TimeSlotComponent> getAdvisorSchedule(String name) throws SQLException;
 	public int addUser(GetSet set) throws SQLException;
+	public int updateuser(GetSet set) throws SQLException;
 	public ArrayList<String> getAdvisors() throws SQLException;
 	public LoginUser checkUser(GetSet set) throws SQLException;
 	public String addTimeSlot(AllocateTime at) throws SQLException;

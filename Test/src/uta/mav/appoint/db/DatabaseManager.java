@@ -33,6 +33,10 @@ public class DatabaseManager {
 		return imp.addUser(set);
 	}
 	
+	public int updateuser(GetSet set) throws SQLException{
+		return imp.updateuser(set);
+	}
+	
 	public ArrayList<String> getAdvisors() throws SQLException{
 		return imp.getAdvisors();
 	}
