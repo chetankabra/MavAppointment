@@ -39,14 +39,13 @@ public class RDBImpl implements DBImplInterface{
 		try
 	    {
 	    Class.forName("com.mysql.jdbc.Driver").newInstance();
-	    String jdbcUrl = "jdbc:mysql://localhost:3306/meena_db";
+	    String jdbcUrl = "jdbc:mysql://localhost:3306/MavAppointDB1";
 	    String userid = "root";
 	    String password = "root";
 	    Connection conn = DriverManager.getConnection(jdbcUrl,userid,password);
 	    return conn;
 	    }
 	    catch (Exception e){
-	    	System.out.println("Hello");
 	        System.out.println(e.toString());
 	    }
 	    return null;
@@ -85,14 +84,42 @@ public class RDBImpl implements DBImplInterface{
 	
 	public int addUser(GetSet set)
 	{
-		int check = 0;
 		PreparedStatement statement;
-         try{
 		Connection conn = this.connectDB();
-		String command = "INSERT INTO USER (email,password,role) VALUES(email=?,password=?,role=?)";
+		try{
+		//String command = " Select * from User";
+		String command = "insert INTO USER (email,password,role,username) VALUES(?,?,?,?)";
 		statement = conn.prepareStatement(command);
-		return check;
-}
+		statement.setString(1, set.getEmailAddress());
+		statement.setString(2, set.getPassword());
+		statement.setString(3, set.getRole());
+		statement.setString(4, set.getusername());
+		statement.executeUpdate();
+		return 1;
+         }
+        catch(Exception e)
+          {
+        	System.out.print(e);
+            }
+		
+		return 0;
+	}
+	
+	public int updateuser(GetSet set)
+	{
+		PreparedStatement statement;
+		Connection conn = this.connectDB();
+		try{
+		//String command = " Select * from User";
+		String command = "UPDATE user SET email=? , password=?, username=? where email=? ";
+		statement = conn.prepareStatement(command);
+		statement.setString(1, set.getnewemail());
+		statement.setString(2, set.getPassword());
+		statement.setString(3, set.getusername());
+		statement.setString(4, set.getEmailAddress());
+		statement.executeUpdate();
+		return 1;
+         }
         catch(Exception e)
           {
         	System.out.print(e);

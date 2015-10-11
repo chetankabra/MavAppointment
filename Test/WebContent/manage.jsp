@@ -1,4 +1,4 @@
-<%@include file="templates/header.jsp"%>
+<jsp:include page='<%=(String) request.getAttribute("includeHeader")%>' />
 	<div class="container">
 	<form action="#" method="post">
 	<div class="row">
@@ -10,12 +10,18 @@
 			 	
 			 <label for="emailAddress">Email Address</label>
 			 <input type="text" class="form-control" name=emailAddress
-			 placeholder="firstname.lastname@mavs.uta.edu"> 
+			 placeholder="firstname.lastname@mavs.uta.edu" 
+			 value = '<%=(String) request.getAttribute("emailAddress")%>'
+			 readonly ="readonly" >
 			 
-			 <label for="Username">User Name</label>
+			<label for="newemail">New Email Address</label>
+			 <input type="text" class="form-control" name=newemail
+			 placeholder="firstname.lastname@mavs.uta.edu">
+			 
+			 <label for="Username">New User Name</label>
 			 <input type="text" class="form-control" name=username>
 			 
-			 <label for="password">Password</label>
+			 <label for="password">New Password</label>
 			 <input type="password" class="form-control" name=password>
 			 
 			 <label for="repeatPassword">Repeat Password</label>

@@ -19,8 +19,10 @@ public class GetSet implements Serializable{
 	private String role;
 	private String name;
 	private String date;
+	private String username;
 	private String starttime;
 	private String endtime;
+	private String newemail;
 	/**
 	 * @return the name
 	 */
@@ -108,6 +110,10 @@ public class GetSet implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public void setnewemail(String newemail) {
+		this.newemail = newemail;
+	}
 	/**
 	 * @return the emailAddress
 	 */
@@ -119,6 +125,29 @@ public class GetSet implements Serializable{
 	 */
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
+	}
+	
+	/**
+	 * @param username to username 
+	 */
+	public void setusername(String username) {
+		this.username = username;
+	}
+	
+	
+
+	/**
+	 * @param username to username 
+	 */
+	public String getnewemail() {
+		return newemail;
+	}
+	
+	/**
+	 * @param username to username 
+	 */
+	public String getusername() {
+		return username;
 	}
 	
 	
