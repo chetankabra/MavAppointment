@@ -105,7 +105,7 @@
 				</form>
 			</div>
 		</div>
-	<form name=addAppt action="manage" onsubmit="return validate2()" method="post">
+	<form name=addAppt action="Appointment-manage" onsubmit="return validate2()" method="post">
 	<div class="modal fade" id="addApptModal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">

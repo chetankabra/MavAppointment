@@ -105,4 +105,13 @@
     <servlet-name>CreateAdvisorServlet</servlet-name>
     <url-pattern>/create_advisor</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>ManageAppointmentServlet</servlet-name>
+    <servlet-class>uta.mav.appoint.ManageAppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageAppointmentServlet</servlet-name>
+    <url-pattern>/Appointment-manage</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
