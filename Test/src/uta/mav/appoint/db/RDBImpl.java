@@ -250,7 +250,7 @@ public class RDBImpl implements DBImplInterface{
 		try{
 			Connection conn = this.connectDB();
 			PreparedStatement statement;
-			String command = "SELECT advisor_settings.pname,advisor_settings.email,advising_date,advising_starttime,advising_endtime,appointment_type,id,appointments.description,studentid,appointments.student_email FROM USER,APPOINTMENTS,ADVISOR_SETTINGS "
+			String command = "SELECT advisor_settings.pname,advisor_settings.email,advising_date,advising_starttime,advising_endtime,appointment_type,id,appointments.description,studentid,appointments.STUDENTID FROM USER,APPOINTMENTS,ADVISOR_SETTINGS "
 						+ "WHERE USER.email=? AND user.userid=appointments.advisor_userid AND advisor_settings.userid=appointments.advisor_userid";
 			statement = conn.prepareStatement(command);
 			statement.setString(1, user.getEmail());

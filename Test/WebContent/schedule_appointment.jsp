@@ -79,20 +79,50 @@
 						<input type="hidden" name=pname id="pname">
 						<input type="hidden" name=duration id="duration">
 						<input type="hidden" name=advisor_email id="advisor_email">
-						Email address: <br><input type="text" name="email" id="email" value="<%= user.getEmail()%>"><br>
-						UTA Student ID: <br><input type="text" name="studentid"> <br>
-						Description: <br><textarea rows=4 columns="10" name="description"></textarea>
+						
+	<script src="JSFormValidation.js"></script> 
+
+ 
+  <form id="formTest" method="get" action="processData">
+    <table>
+    <tr>
+      <td><label for="txtName">Name<span class="required">*</span></label></td>
+      <td><input type="text" id="txtName" name="name"></td>
+      <td id="elmNameError" class="errorMsg">&nbsp;</td></tr>
+    <tr>
+      <td><label for="txtStudentID">UTA Student ID<span class="required">*</span></label></td>
+      <td><input type="text" id="txtStudentID" name="studentid"></td>
+      <td id="elmZipcodeError" class="errorMsg">&nbsp;</td></tr>
+    <tr>
+      <td><label for="txtPhone">Phone<span class="required">*</span></label></td>
+      <td><input type="text" id="txtPhone" name="phone"></td>
+      <td id="elmPhoneError" class="errorMsg">&nbsp;</td></tr>
+    <tr>
+      <td><label for="txtEmail">Email<span class="required">*</span></label></td>
+      <td><input type="text" id="txtEmail" name="email" value="<%= user.getEmail()%>"></td>
+      <td id="elmEmailError" class="errorMsg">&nbsp;</td></tr>
+    <tr>
+      <td><label for="txtDesc">Brief Description<span class="required">*</span></label></td>
+      <td><input type="textarea" rows=4 columns=10 id="txtDesc" name="description"></td>
+      <td id="elmNameError" class="errorMsg">&nbsp;</td></tr>
+ <td>&nbsp;</td>
+      <td><input type="submit" value="SUBMIT" id="btnSubmit" onclick="javascript:FormSubmit();" >&nbsp;
+          <input type="reset" value="CLEAR" id="btnReset"></td>
+      <td>&nbsp;</td></tr>
+    </table>
+  </form>		
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default"
 						data-dismiss="modal"> Close 
-					</button>
-					<input type="submit" value="Submit" onclick="javascript:FormSubmit();">
+					</button>					
 				</div>
 			</div>
 		</div>
 	</div>
 	</form>
+	
+	
 <style>
 	#calendar{
 	background-color: white;

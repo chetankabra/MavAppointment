@@ -78,6 +78,7 @@ public class AdvisingServlet extends HttpServlet{
 					}
 					else{
 						schedule = dbm.getAdvisorSchedule("all");
+						
 					}
 					if (schedule.size() != 0){
 						session.setAttribute("schedules", schedule);

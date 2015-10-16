@@ -46,8 +46,8 @@
 		
 		<!--  begin processing schedules -->
 		<% ArrayList<TimeSlotComponent> schedules = (ArrayList<TimeSlotComponent>)session.getAttribute("schedules");
-		   ArrayList<Appointment> appointments = (ArrayList<Appointment>)session.getAttribute("appointments");
-		    				%><script>
+		   ArrayList<Appointment> appointments = (ArrayList<Appointment>)session.getAttribute("appointments");%>
+		    				<script>
 		    				$(document).ready(function(){
 		    					$('#calendar').fullCalendar({
 		    						header: {
@@ -61,7 +61,7 @@
 		    							'default' : true,
 		    						}
 		    						<%if (schedules != null){%>
-		    				    	,
+
 		    						eventClick: function(event,element){
 		    							if (event.id >= 0){
 		    							document.getElementById("id1").value = event.id;
@@ -76,6 +76,7 @@
 		 		    		<% int i = 0;
 									for (i=0;i<schedules.size();i++){%> 
 		 								{
+		 								
 		 									title:'<%=schedules.get(i).getName()%>',
 		 									start:'<%=schedules.get(i).getDate()+"T"+schedules.get(i).getStartTime()%>',
 		 									end:'<%=schedules.get(i).getDate()+"T"+schedules.get(i).getEndTime()%>',
@@ -91,9 +92,9 @@
  												start:'<%=appointments.get(i-1).getAdvisingDate()+"T"+appointments.get(i-1).getAdvisingStartTime()%>',
  												end:'<%=appointments.get(i-1).getAdvisingDate()+"T"+appointments.get(i-1).getAdvisingEndTime()%>',
  												id:<%=-i%>,
- 												backgroundColor: 'orange'
+ 												backgroundColor: 'red'
  											}
- 											<%if(i != appointments.size()){%>,<%}
+ 											<% if(i != appointments.size()){%>,<%}
  										}
 									}%>		 					 
 		 					 			]<%}%>
@@ -106,7 +107,9 @@
 		<input type="hidden" name=id1 id="id1">
 		<input type="hidden" name=pname id="pname">
 		<input type="hidden" name=advisor_email id="advisor_email">
-	</form>		 							
+		
+		
+	</form>		 
 	
 	<form name=updateAppt action="appointments" method="get">
 	</form>
